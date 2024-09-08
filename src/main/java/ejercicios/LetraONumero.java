@@ -1,19 +1,28 @@
-
 package ejercicios;
 
 import static ejercicios.SetDeTenis.evaluar;
 import java.util.Scanner;
 
-/**
- *
- * @author danielsanchez
- */
+
+
 public class LetraONumero {
     public static String evaluar(char caracter) {
         // TODO: Coloca aquí el código del ejercicio 4: Letra o número
-        return "";
+       
+        if (Character.isDigit(caracter)) {
+            return "Es número";
+        } else if (Character.isLetter(caracter)) {
+            if (Character.isUpperCase(caracter)) {
+                return "Es letra mayúscula";
+            } else {
+                return "Es letra minúscula";
+            }
+        } else {
+            return "No es letra ni número";
+        }
+
     }
-    
+
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
         System.out.print("Caracter:");
